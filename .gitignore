@@ -76,6 +76,7 @@ static/*
 !static/blog/
 !static/blog/images/
 !static/blog/images/*.png
+!static/blog/images/*.ico
 !static/blog/images/*.jpeg
 !static/blog/main.css
 
