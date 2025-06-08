@@ -8,7 +8,24 @@ from django.views.generic import (
     UpdateView,
     DeleteView
 )
+from django.urls import reverse
 from .models import Post
+from django.shortcuts import render, get_object_or_404, redirect
+from .models import Post
+from django.contrib.auth.decorators import login_required
+
+@login_required
+def like_post(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    current_page = request.GET.get('page', '1')  # Get current page or default to 1
+
+    if request.user in post.likes.all():
+        post.likes.remove(request.user)
+    else:
+        post.likes.add(request.user)
+
+    # Redirect back with the current page
+    return redirect(f"{reverse('blog-home')}?page={current_page}") 
 
 
 def home(request):
