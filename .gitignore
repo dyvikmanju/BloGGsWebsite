@@ -70,7 +70,15 @@ Thumbs.db
 
 # Static and media files
 media/
-static/
+# Ignore everything in static
+static/*
+# But not these subfolders or files
+!static/blog/
+!static/blog/images/
+!static/blog/images/*.png
+!static/blog/images/*.jpeg
+!static/blog/main.css
+
 
 # Deployment files
 *.tar.gz
