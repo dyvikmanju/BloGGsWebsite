@@ -5,7 +5,7 @@
 pip install -r requirements.txt
 
 # 2. Run migrations
-
+python manage.py makemigrations
 python manage.py migrate
 
 # 3. Delete all users and create new superuser
