@@ -11,8 +11,8 @@ from django.views.generic import (
 from django.urls import reverse
 from .models import Post
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Post
 from django.contrib.auth.decorators import login_required
+from django.db.models import Q
 
 @login_required
 def like_post(request, pk):
@@ -29,23 +29,50 @@ def like_post(request, pk):
 
 
 def home(request):
+    query = request.GET.get('q')  # Get the search query from URL parameters
+    posts = Post.objects.all().order_by('-date_posted')
+    
+    if query:
+        # Search in title (case-insensitive)
+        posts = posts.filter(
+            Q(title__icontains=query) | 
+            Q(content__icontains=query)
+        )  # Added missing closing parenthesis here
+    
     context = {
-        'posts': Post.objects.all()
+        'posts': posts,
+        'search_query': query
     }
     return render(request, 'blog/home.html', context)
 
 
 class PostListView(ListView):
     model = Post
-    template_name = 'blog/home.html'  # <app>/<model>_<viewtype>.html
+    template_name = 'blog/home.html'
     context_object_name = 'posts'
     ordering = ['-date_posted']
     paginate_by = 5
+    
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        query = self.request.GET.get('q')
+        
+        if query:
+            return queryset.filter(
+                Q(title__icontains=query) | 
+                Q(content__icontains=query)
+            ).order_by('-date_posted')
+        return queryset
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['search_query'] = self.request.GET.get('q', '')
+        return context
 
 
 class UserPostListView(ListView):
     model = Post
-    template_name = 'blog/user_posts.html'  # <app>/<model>_<viewtype>.html
+    template_name = 'blog/user_posts.html'
     context_object_name = 'posts'
     paginate_by = 5
 
