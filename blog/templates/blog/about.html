@@ -15,42 +15,55 @@
                         <img src="{% static 'blog/images/pic.jpeg' %}" alt="Profile Image" class="img-fluid rounded-circle profile-img">
                     </div>
                     <div class="col-md-8">
-                        <h2 class="mb-3">Hello, I'm DYVIK </h2>
+                        <h2 class="mb-3">Hello, I'm DYVIK</h2>
                         <p class="about-text">
-                            I'm a passionate developer with expertise in building robust web applications using Django.
-                            This blog platform represents my skills in full-stack development and clean, efficient coding.
+                            I'm a passionate Django developer with expertise in building robust, scalable web applications. 
+                            With hands-on experience in the Django ecosystem, I specialize in creating secure and efficient 
+                            backend systems with clean, maintainable code.
                         </p>
                         <div class="social-links mt-4">
-<a href="https://www.instagram.com/dyvik_15/" class="btn btn-outline-primary mr-2" target="_blank">
-    <i class="fab fa-instagram"></i> Instagram
-</a>
-<a href="https://www.linkedin.com/in/dyvik-manju-9a1b07269" class="btn btn-outline-info mr-2" target="_blank">
-    <i class="fab fa-linkedin"></i> LinkedIn
-</a>
-<a href="mailto:dyvikmanju5@gmail.com" class="btn btn-outline-danger" target="_blank">
-    <i class="fas fa-envelope"></i> Email
-</a>
+                            <a href="https://www.instagram.com/dyvik_15/" class="btn btn-outline-primary mr-2" target="_blank">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                            <a href="https://www.linkedin.com/in/dyvik-manju-9a1b07269" class="btn btn-outline-info mr-2" target="_blank">
+                                <i class="fab fa-linkedin"></i> LinkedIn
+                            </a>
+                            <a href="mailto:dyvikmanju5@gmail.com" class="btn btn-outline-danger" target="_blank">
+                                <i class="fas fa-envelope"></i> Email
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="skills-section mb-5">
-                <h3 class="section-title mb-4"><i class="fas fa-code mr-2"></i>Technical Skills</h3>
+            <div class="django-expertise mb-5">
+                <h3 class="section-title mb-4"><i class="fab fa-python mr-2"></i>My Django Expertise</h3>
                 <div class="row">
                     <div class="col-md-6">
-                        <ul class="skills-list">
-                            <li><i class="fas fa-check-circle text-success mr-2"></i> Python & Django Development</li>
-                            <li><i class="fas fa-check-circle text-success mr-2"></i> Django REST Framework</li>
-                            <li><i class="fas fa-check-circle text-success mr-2"></i> HTML5, CSS3 & Bootstrap</li>
-                        </ul>
+                        <div class="card mb-3 border-primary">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-shield-alt text-primary mr-2"></i>Core Skills</h5>
+                                <ul class="skills-list">
+                                    <li><i class="fas fa-check-circle text-success mr-2"></i> Django ORM & Model Relationships</li>
+                                    <li><i class="fas fa-check-circle text-success mr-2"></i> Class-Based Views & Mixins</li>
+                                    <li><i class="fas fa-check-circle text-success mr-2"></i> Authentication & Permissions</li>
+                                    <li><i class="fas fa-check-circle text-success mr-2"></i> Django Signals & Middleware</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-md-6">
-                        <ul class="skills-list">
-                            <li><i class="fas fa-check-circle text-success mr-2"></i> Database Design (PostgreSQL/SQLite)</li>
-                            <li><i class="fas fa-check-circle text-success mr-2"></i> Authentication & Authorization</li>
-                            <li><i class="fas fa-check-circle text-success mr-2"></i> Cloud Deployment (Render, Cloudinary)</li>
-                        </ul>
+                        <div class="card mb-3 border-success">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-rocket text-success mr-2"></i>Advanced Skills</h5>
+                                <ul class="skills-list">
+                                    <li><i class="fas fa-check-circle text-success mr-2"></i> Django REST Framework</li>
+                                    <li><i class="fas fa-check-circle text-success mr-2"></i> Performance Optimization</li>
+                                    <li><i class="fas fa-check-circle text-success mr-2"></i> Custom Template Tags</li>
+                                    <li><i class="fas fa-check-circle text-success mr-2"></i> Deployment & CI/CD</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -60,21 +73,31 @@
                 <div class="project-card p-4 bg-light rounded">
                     <h4 class="project-name">Django Blog Web Application</h4>
                     <p class="project-description mt-3">
-                        A full-featured blog platform developed with Django that includes user authentication, 
-                        post management, and responsive design. Key features include:
+                        This blog platform was developed as a demonstration of my Django skills, featuring:
                     </p>
                     <ul class="project-features">
-                        <li><strong>User System:</strong> Registration, login, and profile management using Django auth</li>
-                        <li><strong>Content Management:</strong> Create, read, update, and delete posts with class-based views</li>
-                        <li><strong>Automation:</strong> Django signals for automatic profile creation</li>
-                        <li><strong>Performance:</strong> Pagination for efficient post navigation</li>
-                        <li><strong>Deployment:</strong> Cloudinary for media storage and Render for hosting</li>
-                        <li><strong>UI/UX:</strong> Responsive design with Bootstrap and Crispy Forms</li>
+                        <li><strong>User System:</strong> Complete authentication flow with password reset</li>
+                        <li><strong>Content Management:</strong> Rich text editing and image uploads</li>
+                        <li><strong>Performance:</strong> Optimized queries and pagination</li>
+                        <li><strong>Security:</strong> CSRF protection and secure user sessions</li>
+                        <li><strong>UI/UX:</strong> Responsive design with Bootstrap 5</li>
                     </ul>
+                    
+                    <div class="credits mt-4 p-3 bg-white rounded">
+                        <h5><i class="fas fa-heart text-danger mr-2"></i>Special Thanks</h5>
+                        <p>
+                            This project was inspired by Corey Schafer's excellent Django tutorials on YouTube. 
+                            His clear explanations and practical approach were invaluable in my Django learning journey.
+                        </p>
+                        <a href="https://www.youtube.com/user/schafer5" class="btn btn-sm btn-outline-danger" target="_blank">
+                            <i class="fab fa-youtube mr-1"></i> Visit Corey's Channel
+                        </a>
+                    </div>
+                    
                     <div class="tech-stack mt-4">
-                        <span class="badge badge-primary mr-2">Django</span>
-                        <span class="badge badge-secondary mr-2">Python</span>
-                        <span class="badge badge-success mr-2">Bootstrap</span>
+                        <span class="badge badge-primary mr-2">Django 4.0</span>
+                        <span class="badge badge-secondary mr-2">Python 3.10</span>
+                        <span class="badge badge-success mr-2">Bootstrap 5</span>
                         <span class="badge badge-info mr-2">PostgreSQL</span>
                         <span class="badge badge-warning mr-2">Cloudinary</span>
                         <span class="badge badge-dark">Render</span>
@@ -82,9 +105,27 @@
                 </div>
             </div>
 
+            <div class="personal-note card border-info mb-5">
+                <div class="card-body">
+                    <h4 class="card-title"><i class="fas fa-lightbulb text-info mr-2"></i>My Django Philosophy</h4>
+                    <p class="card-text">
+                        I believe in building Django applications that are not just functional but also maintainable and scalable. 
+                        My approach emphasizes:
+                    </p>
+                    <ul>
+                        <li>Clean architecture with proper separation of concerns</li>
+                        <li>Comprehensive test coverage</li>
+                        <li>Following Django's "batteries-included" philosophy</li>
+                        <li>Writing documentation as part of development</li>
+                    </ul>
+                </div>
+            </div>
+
             <div class="cta-section text-center py-4">
-                <h4 class="mb-4">Interested in working together or have questions?</h4>
-                <a href="#" class="btn btn-primary btn-lg"><i class="fas fa-paper-plane mr-2"></i>Get In Touch</a>
+                <h4 class="mb-4">Want to collaborate on a Django project?</h4>
+                <a href="mailto:dyvikmanju5@gmail.com" class="btn btn-primary btn-lg">
+                    <i class="fas fa-paper-plane mr-2"></i>Let's Connect
+                </a>
             </div>
         </div>
     </div>
@@ -147,6 +188,14 @@
     
     .project-features li {
         margin-bottom: 8px;
+    }
+    
+    .credits {
+        border-left: 3px solid #dc3545;
+    }
+    
+    .personal-note {
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     }
     
     .badge {
